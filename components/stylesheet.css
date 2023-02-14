@@ -1,0 +1,9 @@
+.ml-md-250 {
+    margin-left: 185px;
+  }
+  
+  @media (max-width: 767px) {
+    .ml-md-250 {
+      margin-left: 0;
+    }
+  }

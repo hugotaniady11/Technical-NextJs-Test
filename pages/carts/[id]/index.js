@@ -5,6 +5,16 @@ const cart = ({cart}) => {
   // const router = useRouter();
   // const {id} = router.query;
   // console.log(cart);
+  function displayTimestamp() {
+    const timestamp = new Date();
+    const formattedDate = timestamp.toLocaleDateString('en-IE', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+  });
+  return formattedDate;
+  }
+
   return (
     <>
     <div>
@@ -15,7 +25,7 @@ const cart = ({cart}) => {
           User: {cart.userId}
         </li>
         <li className="list-group-item">
-          Add On
+          Add On: {displayTimestamp()}
         </li>
         <li className="list-group-item">
           # of Items: {cart.totalQuantity}
@@ -28,7 +38,7 @@ const cart = ({cart}) => {
       <div className="table-responsive">
         <table className="table">
           <thead>
-            <tr>
+            <tr className="text-center">
               <th>Product Name</th>
               <th>Price</th>
               <th>Quantity</th>
@@ -38,8 +48,8 @@ const cart = ({cart}) => {
           </thead>
           <tbody>
             {cart.products.map(item => (
-              <tr key={item.id}>
-                <td>{item.title}</td>
+              <tr key={item.id} className="text-center">
+                <td className="text-start">{item.title}</td>
                 <td>{item.price}</td>
                 <td>{item.quantity}</td>
                 <td>{item.discountPercentage}</td>
