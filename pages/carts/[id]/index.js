@@ -2,9 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 
 const cart = ({cart}) => {
-  // const router = useRouter();
-  // const {id} = router.query;
-  // console.log(cart);
+
   function displayTimestamp() {
     const timestamp = new Date();
     const formattedDate = timestamp.toLocaleDateString('en-IE', {
